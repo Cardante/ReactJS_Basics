@@ -7,6 +7,23 @@ import { Home } from "./components/Home"
 
 //App Component
 class App extends React.Component {
+    //Constructor to set state
+    constructor(){
+        super();
+        this.state = {
+            homeLink: "Home"
+        }
+    }
+
+    onGreet(){
+        alert("Hello Stranger!");
+    }
+
+    onChangeLinkName(newName){
+        this.setState({
+            homeLink: newName
+        })
+    }
     
     //For component Rendering
     render(){
@@ -22,13 +39,19 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header/>
+                        <Header homeLink={this.state.homeLink}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
                         {/*Props->Properties that become available in the Home component*/}
-                        <Home username="Diogo" initialAge={21} info={info}>
+                        <Home 
+                        username="Diogo" 
+                        initialAge={21} 
+                        info={info} 
+                        greet={this.onGreet} 
+                        changeLink={this.onChangeLinkName.bind(this)} 
+                        >
                             <p>This is a Paragraph</p>
                         </Home> 
                     </div>
