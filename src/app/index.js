@@ -11,9 +11,14 @@ class App extends React.Component {
     //For component Rendering
     render(){
 
+        let info = {
+            email: "diogocardante@gmail.com",
+            hobbies: ["sports", "games", "books"]
+        };
+
         //Returns JSX (Javascript syntact extension)
         return(
-            //Only one element
+            //Only one element 
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
@@ -22,7 +27,10 @@ class App extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home/> 
+                        {/*Props->Properties that become available in the Home component*/}
+                        <Home username="Diogo" initialAge={21} info={info}>
+                            <p>This is a Paragraph</p>
+                        </Home> 
                     </div>
                 </div>          
             </div>
