@@ -1,5 +1,6 @@
 import React from 'react'; //for creating components
 import { render } from "react-dom"; //for component render
+import { STATUS_CODES } from 'http';
 
 //Imported Components
 import { Header } from "./components/Header"
@@ -51,6 +52,7 @@ class App extends React.Component {
                         info={info} 
                         greet={this.onGreet} 
                         changeLink={this.onChangeLinkName.bind(this)} 
+                        initialLinkName={this.state.homeLink} 
                         >
                             <p>This is a Paragraph</p>
                         </Home> 

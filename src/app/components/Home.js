@@ -1,5 +1,4 @@
 import React from "react";
-import { STATUS_CODES } from "http";
 
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,7 @@ export class Home extends React.Component {
         this.state = {
             age: props.initialAge,
             status: 0,
-            homeLink: "Changed Link"
+            homeLink: props.initialLinkName
         };
 
         //Change status after 3 seconds -> changes state
@@ -35,6 +34,12 @@ export class Home extends React.Component {
     //Function to change the link name
     onChangeLink(){
         this.props.changeLink(this.state.homeLink); //Changes the name of the link by calling the function passed in the props
+    }
+
+    onHandleChange(event) {
+        this.setState({
+            homeLink: event.target.value //The value of the input field
+        });
     }
 
     render(){
@@ -61,7 +66,13 @@ export class Home extends React.Component {
                 {/*The bind method allows to bind functions to the component, so it updates the component*/}
                 <button className="btn btn-primary" onClick={this.onMakeOlder.bind(this)} >Make Me Older</button>
                 <button className="btn btn-warning" onClick={this.props.greet}>Greet</button>
+                
+                {/*Changing Header Link Name*/}
+                <p>New Header</p>
+                {/*When typing, calls the onChange*/}
+                <input type="text" value={this.state.homeLink} onChange={(event) => this.onHandleChange(event)} />
                 <button className="btn btn-danger" onClick={this.onChangeLink.bind(this)}>Change Header Link</button>
+
             </div>
         );
     }
@@ -73,5 +84,6 @@ Home.propTypes = {
     age: PropTypes.number,
     info: PropTypes.object,
     children: PropTypes.element.isRequired,
-    greet: PropTypes.func
+    greet: PropTypes.func,
+    initialLinkName: PropTypes.string
 }
