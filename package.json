@@ -1,0 +1,34 @@
+{
+  "name": "reactjs_basics",
+  "version": "1.0.0",
+  "description": "ReactJS Basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cardante/ReactJS_Basics.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Diogo Cardante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cardante/ReactJS_Basics/issues"
+  },
+  "homepage": "https://github.com/Cardante/ReactJS_Basics#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.15.1",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
