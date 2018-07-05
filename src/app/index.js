@@ -1,6 +1,10 @@
 import React from 'react'; //for creating components
 import { render } from "react-dom"; //for component render
 
+//Imported Components
+import { Header } from "./components/Header"
+import { Home } from "./components/Home"
+
 //App Component
 class App extends React.Component {
     
@@ -13,9 +17,14 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <h1>Testing</h1> 
+                        <Header/>
                     </div>
-                </div>       
+                </div>
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        <Home/> 
+                    </div>
+                </div>          
             </div>
         );
     }
