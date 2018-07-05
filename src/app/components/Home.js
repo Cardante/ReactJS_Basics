@@ -1,4 +1,5 @@
 import React from "react";
+import { log } from "util";
 
 import PropTypes from 'prop-types';
 
@@ -40,6 +41,46 @@ export class Home extends React.Component {
         this.setState({
             homeLink: event.target.value //The value of the input field
         });
+    }
+
+    //before render
+    componentWillMount(){
+        console.log("Component will Mount");
+    }
+
+    //after render
+    componentDidMount(){
+        console.log("Component Did Mount");
+    }
+
+    //When component receives new props
+    componentWillReceiveProps(nextProps){
+        console.log("Component Will Receive New Props: ", nextProps )
+    }
+
+    //before rendering, after receiving new props or state
+    shouldComponentUpdate(nextProps, nextState){
+        console.log("Component Update: ", nextProps, nextState);
+        //if the next state has the following value
+        /*if(nextState.status === 1) {
+            return false;
+        } */
+        //return true;
+    }
+
+    //before rendering, after receiving new props or state
+    componentWillUpdate(newProps, nextState){
+        console.log("Component Will Update: ", nextProps, nextState);
+    }
+
+    //after components updates are flushed to dom
+    componentDidUpdate(prevProps, prevState){
+        console.log("Component Did Update: ", prevProps, prevState);
+    }
+
+    //before removing component from dom
+    componentWillUnmount(){
+        console.log("Component Will Unmount");
     }
 
     render(){
