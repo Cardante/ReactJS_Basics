@@ -1,9 +1,13 @@
 import React from 'react'; //for creating components
 import { render } from "react-dom"; //for component render
-
+//import { Router, Route, browserHistory } from "react-router"; //for routing
+ 
 //Imported Components
 import { Header } from "./components/Header"
 import { Home } from "./components/Home"
+import { User } from './components/User'
+import { Root } from "./components/Root"
+import { Homme } from './components/Homme'
 
 //App Component
 class App extends React.Component {
@@ -77,6 +81,11 @@ class App extends React.Component {
                     </div>
                 </div>           
             </div>
+            
+            /*<Router history={browserHistory}>
+                <Route path={"user"} component={User}/>
+                <Route path={"home"} component={Home}/>
+            </Router>*/
         );
     }
 }
