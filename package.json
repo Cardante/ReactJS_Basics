@@ -4,6 +4,9 @@
   "description": "ReactJS Basics",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p && cp src/index.html dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,8 +23,10 @@
   },
   "homepage": "https://github.com/Cardante/ReactJS_Basics#readme",
   "dependencies": {
+    "babel-core": "^6.26.3",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "webpack-cli": "^3.0.8"
   },
   "devDependencies": {
     "babel-loader": "^7.1.5",
